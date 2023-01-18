@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 
 
 class App extends React.Component {
@@ -16,7 +16,7 @@ class App extends React.Component {
                      console.log(json);
                      return json;
                  })
-                 .then(json => this.setState({message: json.message}))
+                 .then(json => this.setState(c => c.message = json.message))
                  .catch(e => console.log(e));
     }
 
@@ -30,4 +30,5 @@ class App extends React.Component {
     }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
