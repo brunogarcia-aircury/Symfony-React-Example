@@ -10,4 +10,4 @@ Do ensure that you have installed on your system:
 - [PHP](https://www.php.net/) This project has been developed using php 8.2.1, I strongly recommend use 8.1 or greater
 - [Yarn package manager](https://yarnpkg.com/) This project has been developed using Yarn version 1.22.19
 
-Here is a [guide](https://github.com/brunogarcia-aircury/Symfony-React-Example/wiki/Prerequisites-Guide) to install node.js and yarn
+Here is a [guide](https://github.com/brunogarcia-aircury/Symfony-React-Example/wiki/Development-History) to install node.js and yarn
