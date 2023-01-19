@@ -13,7 +13,8 @@ class DefaultController extends AbstractController
      */
     const ROUTES = [
         '/', // Root
-        '/test',
+        '/hello',
+        '/hello fetch',
     ];
 
     #[Route(self::ROUTES, name: 'app_browser_request',methods: ['GET'])]
