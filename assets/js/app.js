@@ -5,22 +5,30 @@ import {
     RouterProvider,
 } from "react-router-dom";
 
-const Hello = React.lazy(()=> import('./Components/Hello'));
+const Home = React.lazy(()=> import('./Components/Home'));
+const HelloForm = React.lazy(()=> import('./Components/HelloForm'));
+const HelloFetchForm = React.lazy(()=> import('./Components/HelloFetchForm'));
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Hello />,
+        element: <Home />,
     },
     {
-        path: "/test",
-        element: <h1>This is a test</h1>,
+        path: "/hello",
+        element:<HelloForm />,
+    },
+    {
+        path: "/hello fetch",
+        element:<HelloFetchForm />,
     },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <React.Suspense fallback={<div>Loading...</div>}>
+            <RouterProvider router={router} />
+        </React.Suspense>
     </React.StrictMode>
 );
