@@ -13,15 +13,26 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <Home />,
+        errorElement: <div>Custom 404 error</div>,
+        children: [
+            {
+                path: "/hello",
+                element:<HelloForm />,
+            },
+            {
+                path: "/hello fetch",
+                element:<HelloFetchForm />,
+            },
+        ]
     },
-    {
-        path: "/hello",
-        element:<HelloForm />,
-    },
-    {
-        path: "/hello fetch",
-        element:<HelloFetchForm />,
-    },
+    // {
+    //     path: "/hello",
+    //     element:<HelloForm />,
+    // },
+    // {
+    //     path: "/hello fetch",
+    //     element:<HelloFetchForm />,
+    // },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
