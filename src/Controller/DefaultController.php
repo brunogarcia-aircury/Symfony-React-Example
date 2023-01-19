@@ -8,7 +8,15 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
-    #[Route('/', name: 'app_default')]
+    /**
+     * @var array|string[]
+     */
+    const ROUTES = [
+        '/', // Root
+        '/test',
+    ];
+
+    #[Route(self::ROUTES, name: 'app_browser_request',methods: ['GET'])]
     public function index(): Response
     {
         return $this->render('base.html.twig', [
