@@ -1,15 +1,16 @@
-import React from 'react';
+import * as React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
     createBrowserRouter,
     RouterProvider,
 } from "react-router-dom";
 
+const Hello = React.lazy(()=> import('./Components/Hello'));
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <h1>Hello world!</h1>,
+        element: <Hello />,
     },
     {
         path: "/test",
