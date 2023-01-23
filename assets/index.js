@@ -5,14 +5,14 @@ import {
     RouterProvider,
 } from "react-router-dom";
 
-const Home = React.lazy(()=> import('./Components/Home'));
-const HelloForm = React.lazy(()=> import('./Components/HelloForm'));
-const HelloFetchForm = React.lazy(()=> import('./Components/HelloFetchForm'));
+const App = React.lazy(()=> import('./js/Components/App'));
+const HelloForm = React.lazy(()=> import('./js/Components/HelloForm'));
+const HelloFetchForm = React.lazy(()=> import('./js/Components/HelloFetchForm'));
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Home />,
+        element: <App />,
         errorElement: <div>Custom 404 error</div>,
         children: [
             {

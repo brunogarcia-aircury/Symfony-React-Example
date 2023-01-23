@@ -2,13 +2,13 @@ import React, {Suspense} from "react";
 import { Link } from "react-router-dom";
 import { Outlet } from 'react-router-dom';
 
-export default class Home extends React.Component {
+export default class App extends React.Component {
     constructor(props) {
         super(props);
     }
 
     render() {
-        return <Suspense>
+        return <>
             <ul>
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to='/hello'>Simple Hello</Link></li>
@@ -17,8 +17,10 @@ export default class Home extends React.Component {
             </ul>
             <hr />
             <div>
-                <Outlet />
+                <Suspense fallback='inner loading'>
+                    <Outlet />
+                </Suspense>
             </div>
-        </Suspense>;
+        </>;
     }
 }
